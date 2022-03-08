@@ -1,0 +1,20 @@
+<form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)">
+    <input type="hidden" name="productId" [value]="service.formData.id" />
+    <div class="row">
+        <div class="form-group col">
+            <label>NAME</label>
+            <input type="text" class="form-control form-control-lg" placeholder="Product name" name="productName"
+                #productName="ngModel" [(ngModel)]="service.formData.name"
+                required maxlength="30" minlength="5" [class.invalid]="productName.invalid &#038;&#038; productName.touched">
+        </div>
+        <div class="form-group col">
+            <label>VALUE</label>
+            <input type="number" class="form-control form-control-lg" placeholder="$" name="productValue"
+                #productValue="ngModel" [(ngModel)]="service.formData.value"
+                required maxlength="1" minlength="10" [class.invalid]="productValue.invalid &#038;&#038; productValue.touched">
+        </div>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-info btn-lg btn-block" type="submit" [disabled]="form.invalid">SUBMIT</button>
+    </div>
+</form>
