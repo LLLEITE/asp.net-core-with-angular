@@ -10,7 +10,7 @@ import { firstValueFrom, lastValueFrom } from 'rxjs';
 export class ClientService {
 
   public formData: Client = new Client();
-  readonly baseURL = 'https://localhost:44358/api/client';
+  readonly baseURL = 'http://localhost:44358/api/client';
   public list: Client[] = [];
 
   constructor(private http: HttpClient) { }

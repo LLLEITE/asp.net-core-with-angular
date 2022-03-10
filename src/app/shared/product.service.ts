@@ -10,7 +10,7 @@ import { lastValueFrom } from 'rxjs';
 export class ProductService {
   
   formData: Product = new Product();
-  readonly baseURL = 'https://localhost:44358/api/product';
+  readonly baseURL = 'http://localhost:44358/api/product';
   list: Product [] = [];
 
   constructor(private http: HttpClient) { }
